@@ -133,7 +133,7 @@ Notice that I put the name of the folder in quotes. This is optional when the na
 
 Create many directories at the same time by passing thier names to `mkdir`, separated by a space:
 
-	mkdir dir1 dir2 dir3
+	mbp-phil:~ okcoders$ mkdir dir1 dir2 dir3
 	mbp-phil:~ okcoders$ ls
 	Applications	Documents	Library		Music		Public		dir2
 	Desktop		Downloads	Movies		Pictures	dir1		dir3
@@ -164,4 +164,52 @@ Changes the date modified property of a file and is often used to create an empt
 	mbp-phil:~ okcoders$ ls
 	Applications	Documents	Library		Music		Public
 	Desktop		Downloads	Movies		Pictures	newfile.txt
+	
+## rm
+
+Remove a file or directory, that is, delete it. Remove the *newfile.txt* file you just created:
+
+	mbp-phil:~ okcoders$ rm newfile.txt
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Public
+	Desktop		Downloads	Movies		Pictures
+
+Removing a directory is not as straightforward. Create a new directory called *test* and try to remove it with `rm`:
+
+	mbp-phil:~ okcoders$ mkdir test
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Public
+	Desktop		Downloads	Movies		Pictures	test
+	mbp-phil:~ okcoders$ rm test
+	rm: test: is a directory
+
+Without passing additional options, `rm` will not delete a diretory. It returns the error, *test: is a directory*. To delete a directory, include the `-r` option, which tells `rm` to empty the contents of the directory first and then delete the directory:
+
+	mbp-phil:~ okcoders$ rm -r test
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Public
+	Desktop		Downloads	Movies		Pictures
+
+Be careful with `rm`. The command line assumes you know what you are doing. It will not ask if you are sure you want to execute a command, and commands cannot be undone. When you remove a file or folder, it is gone.
+
+## mv
+
+Move a file or directory. Move is also used to rename files.
+
+## cp
+
+Copy a file or directory.
+
+## cat
+
+Concatenate and print files. `cat` allows us to modify files from the command line and to quickly view the contents of files.
+
+## which
+
+Indicates which executable will be used for a program and where it is located. Use `which` to confirm that you have installed a command line program:
+
+	mbp-phil:bash-heroku-class okcoders$ which node
+	/usr/local/bin/node
+	mbp-phil:bash-heroku-class okcoders$ which express
+	/usr/local/bin/express
 	
