@@ -124,8 +124,7 @@ Creates a folder just like creating a new folder in the Finder or in Explorer. P
 
 	mbp-phil:~ okcoders$ mkdir "OK-Coders"
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Pictures
-	Desktop		Downloads	Movies		OK-Coders	Public
+	Applications	Documents	Library		Music		Pictures	Desktop		Downloads	Movies		OK-Coders	Public
 
 Notice that *OK-Coders* now appears in my home folder, and we'll see it from the Finder or Explorer as well. It exists on my computer like any other folder.
 
@@ -135,8 +134,7 @@ Create many directories at the same time by passing thier names to `mkdir`, sepa
 
 	mbp-phil:~ okcoders$ mkdir dir1 dir2 dir3
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public		dir2
-	Desktop		Downloads	Movies		Pictures	dir1		dir3
+	Applications	Documents	Library		Music		Public		dir2	Desktop		Downloads	Movies		Pictures	dir1		dir3
 
 ## rmdir
 
