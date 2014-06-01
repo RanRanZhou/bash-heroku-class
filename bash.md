@@ -144,15 +144,13 @@ Removes the directory specified. Go ahead and remove the *OK-Coders* directory y
 
 	mbp-phil:~ okcoders$ rmdir OK-Coders/
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public
-	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
 	
 It's gone! Remove many directories at the same time by providing their names, separated by a space:
 
 	mbp-phil:~ okcoders$ rmdir dir1 dir2 dir3
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public
-	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
 
 Normally you won't use the `rmdir` command; you'll use the `rm` command instead. See below for details.
 
@@ -162,8 +160,7 @@ Changes the date modified property of a file and is often used to create an empt
 
 	mbp-phil:~ okcoders$ touch newfile.txt
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public
-	Desktop		Downloads	Movies		Pictures	newfile.txt
+	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures	newfile.txt
 	
 ## rm
 
@@ -171,15 +168,13 @@ Remove a file or directory, that is, delete it. Remove the *newfile.txt* file yo
 
 	mbp-phil:~ okcoders$ rm newfile.txt
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public
-	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
 
 Removing a directory is not as straightforward. Create a new directory called *test* and try to remove it with `rm`:
 
 	mbp-phil:~ okcoders$ mkdir test
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public
-	Desktop		Downloads	Movies		Pictures	test
+	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies		Pictures	test
 	mbp-phil:~ okcoders$ rm test
 	rm: test: is a directory
 
@@ -187,8 +182,7 @@ Without passing additional options, `rm` will not delete a diretory. It returns 
 
 	mbp-phil:~ okcoders$ rm -r test
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public
-	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
 
 Be careful with `rm`. The command line assumes you know what you are doing. It will not ask if you are sure you want to execute a command, and commands cannot be undone. When you remove a file or folder, it is gone.
 
