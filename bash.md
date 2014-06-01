@@ -186,7 +186,49 @@ Be careful with `rm`. The command line assumes you know what you are doing. It w
 
 ## mv
 
-Move a file or directory. Move is also used to rename files.
+Move a file or directory. `mv` is also used to rename files.
+
+Create a new folder called *myfolder* and create a new empty file called *newfile.txt*:
+
+	mbp-phil:~ okcoders$ mkdir myfolder
+	mbp-phil:~ okcoders$ touch newfile.txt
+
+The `mv` command requires two arguments. The first is the file or folder you want to move and is called the *source*. The second is the *destination*. It looks like:
+
+	mv source destination
+
+If the destination is a folder, `mv` will move the source into the destination and keep its name. If the destination includes a filename, `mv` will place the source into the destination folder and rename it.
+
+Move *newfile.txt* into *myfolder*:
+
+	mbp-phil:~ okcoders$ mv newfile.txt myfolder/
+	mbp-phil:~ okcoders$ ls myfolder/
+	newfile.txt
+	
+Now move *newfile.txt* back into the current directory without leaving the current directory:
+
+	mbp-phil:~ okcoders$ mv myfolder/newfile.txt .
+
+Notice the use of the `.` to represent the current directory.
+
+Now move *newfile.txt* into *myfolder* while simultaneously renaming it to *renamed.txt*:
+
+	mbp-phil:~ okcoders$ mv newfile.txt myfolder/renamed.txt
+	mbp-phil:~ okcoders$ ls myfolder/
+	renamed.txt
+
+Notice that the difference is we included a new filename in the *destination* argument.
+
+`mv` is also used to rename files. There is no rename command. To rename a file, just move it into the same directory while giving it a different name.
+
+Go into *myfolder* and rename *renamed.txt* back to *newfile.txt*:
+
+	mbp-phil:~ okcoders$ cd myfolder/
+	mbp-phil:myfolder okcoders$ ls
+	renamed.txt
+	mbp-phil:myfolder okcoders$ mv renamed.txt newfile.txt
+	mbp-phil:myfolder okcoders$ ls
+	newfile.txt
 
 ## cp
 
@@ -205,3 +247,6 @@ Indicates which executable will be used for a program and where it is located. U
 	mbp-phil:bash-heroku-class okcoders$ which express
 	/usr/local/bin/express
 	
+## man
+
+Display the manual for a command.
