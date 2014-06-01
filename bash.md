@@ -25,8 +25,7 @@ Your home directory contains all your personal documents, settings and other fil
 Lists the contents of a directory. Without any arguments, it lists the contents of the current working directory:
 
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music			Public	
-	Desktop		Downloads	Movies	Pictures
+	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies	Pictures
 	
 We can pass the `-l` flag to `ls` to show the long listing, which includes additional information about the files:
 
@@ -125,8 +124,7 @@ Creates a folder just like creating a new folder in the Finder or in Explorer. P
 
 	mbp-phil:~ okcoders$ mkdir "OK-Coders"
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Pictu
-	es	Desktop		Downloads	Movies		OK-Coders	Public
+	Applications	Documents	Library		Music	Pictures	Desktop		Downloads	Movies	OK-Coders	Public
 
 Notice that *OK-Coders* now appears in my home folder, and we'll see it from the Finder or Explorer as well. It exists on my computer like any other folder.
 
@@ -136,8 +134,7 @@ Create many directories at the same time by passing thier names to `mkdir`, sepa
 
 	mbp-phil:~ okcoders$ mkdir dir1 dir2 dir3
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public		d
-	r2	Desktop		Downlo	ds	Movies		Pictures	dir1		dir3
+	Applications	Documents	Library		Music	Public		dir2	Desktop		Downloads	Movies	Pictures	dir1		dir3
 
 ## rmdir
 
@@ -145,13 +142,13 @@ Removes the directory specified. Go ahead and remove the *OK-Coders* directory y
 
 	mbp-phil:~ okcoders$ rmdir OK-Coders/
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies		Pictures
 	
 It's gone! Remove many directories at the same time by providing their names, separated by a space:
 
 	mbp-phil:~ okcoders$ rmdir dir1 dir2 dir3
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies		Pictures
 
 Normally you won't use the `rmdir` command; you'll use the `rm` command instead. See below for details.
 
@@ -161,7 +158,7 @@ Changes the date modified property of a file and is often used to create an empt
 
 	mbp-phil:~ okcoders$ touch newfile.txt
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures	newfile.txt
+	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies		Pictures	newfile.txt
 	
 ## rm
 
@@ -169,7 +166,7 @@ Remove a file or directory, that is, delete it. Remove the *newfile.txt* file yo
 
 	mbp-phil:~ okcoders$ rm newfile.txt
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies		Pictures
 
 Removing a directory is not as straightforward. Create a new directory called *test* and try to remove it with `rm`:
 
@@ -183,7 +180,7 @@ Without passing additional options, `rm` will not delete a diretory. It returns 
 
 	mbp-phil:~ okcoders$ rm -r test
 	mbp-phil:~ okcoders$ ls
-	Applications	Documents	Library		Music		Public	Desktop		Downloads	Movies		Pictures
+	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies		Pictures
 
 Be careful with `rm`. The command line assumes you know what you are doing. It will not ask if you are sure you want to execute a command, and commands cannot be undone. When you remove a file or folder, it is gone.
 
