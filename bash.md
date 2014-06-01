@@ -5,6 +5,8 @@ What is the command line?
 
 How does the command line work? What do command line arguments look like?
 
+	command -options arguments
+
 A free, excellent book on the command line is available as a PDF download. I highly recommend it: [The Linux Command Line, by William Shots](http://linuxcommand.org/tlcl.php)
 
 ## pwd
@@ -25,7 +27,7 @@ Lists the contents of a directory. Without any arguments, it lists the contents 
 	mbp-phil:~ okcoders$ ls
 	Applications	Documents	Library		Music	Public		Desktop		Downloads	Movies	Pictures
 	
-We can pass the `-l` flags to `ls` to show the long listing, which includes additional information about the files.
+We can pass the `-l` flag to `ls` to show the long listing, which includes additional information about the files:
 
 	mbp-phil:~ okcoders$ ls -l
 	total 0
@@ -39,7 +41,7 @@ We can pass the `-l` flags to `ls` to show the long listing, which includes addi
 	drwx------+  4 okcoders  staff   136 May 31 14:37 Pictures
 	drwxr-xr-x+  5 okcoders  staff   170 May 30 12:48 Public
 	
-The long listing includes file permissions info on the far left, tells us if the file is a directory or a program, gives us the size and the date last modified.
+The long listing shows file permissions on the far left, tells us if the file is a directory or a program, and gives us the size and the date last modified.
 
 We can also have `ls` show us hidden files with the `-a` flag. It's useful to combine this with the long listing option:
 
@@ -78,7 +80,7 @@ We can list the contents of another directory by passing it as an argument to `l
 	mbp-phil:~ okcoders$ ls Documents/
 	OK-Coders
 	
-I can list the contents of OK-Coders as well by passing the full filepath *Documents/Ok-Coders*. Note the use of the forward slash to separate the folder names.
+I can list the contents of OK-Coders by passing the full filepath *Documents/Ok-Coders*. Note the use of the forward slash to separate the folder names.
 
 	mbp-phil:~ okcoders$ ls Documents/OK-Coders/
 	1-bash-heroku
@@ -112,8 +114,54 @@ Using the tilde like this makes it easy to return to our home directory quickly.
 	mbp-phil:~ okcoders$ cd ~/Documents/OK-Coders/1-bash-heroku/
 	mbp-phil:1-bash-heroku okcoders$ pwd
 	/Users/okcoders/Documents/OK-Coders/1-bash-heroku
-	mbp-phil:1-bash-heroku okcoders$ cd ~
+	mbp-phil:1-bash-heroku okcoders$ cd
 	mbp-phil:~ okcoders$ pwd
 	/Users/okcoders
 	
-Often
+## mkdir
+
+Creates a folder just like creating a new folder in the Finder or in Explorer. Pass it the name of the folder you want to create:
+
+	mbp-phil:~ okcoders$ mkdir "OK-Coders"
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Pictures
+	Desktop		Downloads	Movies		OK-Coders	Public
+
+Notice that *OK-Coders* now appears in my home folder, and we'll see it from the Finder or Explorer as well. It exists on my computer like any other folder.
+
+Notice that I put the name of the folder in quotes. This is optional when the name does not contain any spaces or other special characters. Otherwise you must use quotes for the name. The applies to all commands that take filenames or filepaths.
+
+Create many directories at the same time by passing thier names to `mkdir`, separated by a space:
+
+	mkdir dir1 dir2 dir3
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Public		dir2
+	Desktop		Downloads	Movies		Pictures	dir1		dir3
+
+## rmdir
+
+Removes the directory specified. Go ahead and remove the *OK-Coders* directory you just created:
+
+	mbp-phil:~ okcoders$ rmdir OK-Coders/
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Public
+	Desktop		Downloads	Movies		Pictures
+	
+It's gone! Remove many directories at the same time by providing their names, separated by a space:
+
+	mbp-phil:~ okcoders$ rmdir dir1 dir2 dir3
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Public
+	Desktop		Downloads	Movies		Pictures
+
+Normally you won't use the `rmdir` command; you'll use the `rm` command instead. See below for details.
+
+## touch
+
+Changes the date modified property of a file and is often used to create an empty file. We'll normally use it to create new, empty files:
+
+	mbp-phil:~ okcoders$ touch newfile.txt
+	mbp-phil:~ okcoders$ ls
+	Applications	Documents	Library		Music		Public
+	Desktop		Downloads	Movies		Pictures	newfile.txt
+	
