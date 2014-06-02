@@ -1,11 +1,21 @@
 Introduction to Git
 ====
 
-What is git? What is version control? How does it work with GitHub?
+Git is a version control system. Version control systems keep track of changes you make to files in a project and allow you to undo those changes and move back and forth between them. Additionally, many people may edit same project and even the same files and the version control system will coordinate the changes.
 
-Git first stages files by adding them to a tracking index, and then saves the file to the respository. This is a two step process.
+[GitHub](https://github.com/) works with git to make it easy for programmers to share the code they create and collaborate with others.
 
-Git is divided into a number of commands. You do not call git by itself by with a command and then pass options and arguments to that command. We'll cover the most basic commands here.
+[Heroku](https://www.heroku.com/) works with git to make it easy to *deploy* your applications to the internet.
+
+Tracking changes to a file in a git project is a two step process. Git first *stages* a file by adding it to a tracking index and then *commits* the file to the respository. Once committed, a complete history of changes to the file is available and any version of the file may be recovered. It's awesome.
+
+Git is divided into a number of commands. Do not call git by itself. Instead call git with a command and then pass options and arguments to that command. We'll cover the most basic commands here.
+
+# Reference
+
+[Pro Git](http://git-scm.com/book) is an excellent book on git available for free. The first three chapters are invaluable.
+
+# Basic Git Commands
 
 ## git
 
@@ -30,6 +40,8 @@ Create a new git repository. `cd` into the directory you'd like to use first.
 	mbp-phil:~ okcoders$ cd myproject/
 	mbp-phil:myproject okcoders$ git init
 	Initialized empty Git repository in /Users/okcoders/myproject/.git/
+
+Be careful where you initialize a new git repository. Never initialize a repository in your *home* directory. Always use a subfolder.
 
 ## git status
 
