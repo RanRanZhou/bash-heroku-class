@@ -1,4 +1,4 @@
-Using The Command Line
+Introduction to Bash & The Command Line
 ====
 
 What is the command line?
@@ -8,6 +8,15 @@ How does the command line work? What do command line arguments look like?
 	command -options arguments
 
 A free, excellent book on the command line is available as a PDF download. I highly recommend it: [The Linux Command Line, by William Shots](http://linuxcommand.org/tlcl.php)
+
+## echo
+
+Echoes text back to the terminal prompt. Echo is a good example of using a command with an argument:
+
+	mbp-phil:~ okcoders$ echo "just what I typed back to the screen"
+	just what I typed back to the screen
+
+You must use quotes with arguments that included spaces. Spaces are significant characters on the command line and are used to separate arguments from one another.
 
 ## pwd
 
@@ -73,7 +82,7 @@ We can also have `ls` show us hidden files with the `-a` flag. It's useful to co
 	
 Notice the additional files that appear with the `.` prefix. The `.` prefix tells us the files are hidden and will not normally appear in the Terminal or in the Finder or Explorer.
 
-The two additional directories at the top, `.` and `..` are special constructions to indicate the current directory and the directory one level up in the hierarchy, respectively.
+The two additional entries at the top, `.` and `..` are special constructions to indicate the current directory and the directory one level up in the hierarchy, respectively.
 
 We can list the contents of another directory by passing it as an argument to `ls`. I have one item in my *Documents* directory named *OK-Coders*:
 
@@ -128,7 +137,7 @@ Creates a folder just like creating a new folder in the Finder or in Explorer. P
 
 Notice that *OK-Coders* now appears in my home folder, and we'll see it from the Finder or Explorer as well. It exists on my computer like any other folder.
 
-Notice that I put the name of the folder in quotes. This is optional when the name does not contain any spaces or other special characters. Otherwise you must use quotes for the name. The applies to all commands that take filenames or filepaths.
+Notice that I put the name of the folder in quotes. This is optional when the name does not contain any spaces or other special characters. Otherwise you must use quotes for the name. The applies to all commands that take arguments.
 
 Create many directories at the same time by passing thier names to `mkdir`, separated by a space:
 
@@ -236,7 +245,37 @@ Copy a file or directory.
 
 ## cat
 
-Concatenate and print files. `cat` allows us to modify files from the command line and to quickly view the contents of files.
+Concatenate and print files. `cat` allows us to modify files from the command line and to quickly view the contents of files. We'll learn how to modify files in a later lesson. Here is how you view the contents of a file:
+
+	mbp-phil:~ okcoders$ cat newfile.txt
+	This is a file with some text in it.
+	Cat the file to view its contents
+
+## head
+
+Prints the first lines of a file to the terminal. `head` is like `cat` but is used to peak at the beginning of a file:
+
+	mbp-phil:~ okcoders$ head newfile.txt
+	This is a file with some text in it.
+	Cat the file to view its contents
+
+Pass the `-n` flag with a number to specify how many lines you'd like to preview:
+
+	mbp-phil:~ okcoders$ head -n 1 newfile.txt
+	This is a file with some text in it.
+
+## tail
+
+Prints the last lines of a file to the terminal. `tail` is like `cat` but is used to peak at the end of a file:
+
+	mbp-phil:~ okcoders$ tail newfile.txt
+	This is a file with some text in it.
+	Cat the file to view its contents
+
+Pass the `-n` flag with a number to specify how many lines you'd like to preview:
+
+	mbp-phil:~ okcoders$ tail -n 1 newfile.txt
+	Cat the file to view its contents
 
 ## which
 
@@ -249,4 +288,29 @@ Indicates which executable will be used for a program and where it is located. U
 	
 ## man
 
-Display the manual for a command.
+Displays the manual for a command, showing all the options and arguments a command takes. Use `man` when you're stuck!
+
+	mbp-phil:~ okcoders$ man which
+	WHICH(1)                  BSD General Commands Manual                 WHICH(1)
+	
+	NAME
+	     which -- locate a program file in the user's path
+	
+	SYNOPSIS
+	     which [-as] program ...
+    ...
+     
+`man` uses the `less` command to display the manual contents.
+
+## less
+
+Shows the contents of a file or other input in segments, allowing you to scroll through them on the terminal. 
+
+`less` will wait for keyboard commands to navigate the content. Use the following keys to scroll:
+
+- Down Arrow / Return: scroll down
+- Up Array: scroll up
+- Spacebar: scroll down an entire page
+- b: scroll up an entire page
+
+Use the `q` key to quit when you want to exit `less`.
