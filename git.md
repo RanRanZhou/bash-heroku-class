@@ -1,7 +1,7 @@
 Introduction to Git
 ====
 
-Git is a version control system. Version control systems keep track of changes you make to files in a project and allow you to undo those changes and move back and forth between them. Additionally, many people may edit same project and even the same files and the version control system will coordinate the changes.
+Git is a version control system. Version control systems keep track of changes you make to files in a project and allow you to undo those changes and move back and forth between them. Additionally, many people may edit the same project and even the same file within a project and the version control system will coordinate the changes.
 
 [GitHub](https://github.com/) works with git to make it easy for programmers to share the code they create and collaborate with others.
 
