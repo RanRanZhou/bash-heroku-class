@@ -11,6 +11,18 @@ Git is divided into a number of commands. You do not call git by itself by with 
 
 Print out the list of commands that git accepts.
 
+	git
+	usage: git [--version] [--help] [-C <path>] [-c name=value]
+	           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+	           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+	           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+	           <command> [<args>]
+	
+	The most commonly used git commands are:
+	   add        Add file contents to the index
+	   bisect     Find by binary search the change that introduced a bug
+	   ...
+
 ## git init
 
 Create a new git repository. `cd` into the directory you'd like to use first. 
