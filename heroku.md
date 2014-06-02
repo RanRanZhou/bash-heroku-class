@@ -1,7 +1,7 @@
 Creating an Node.js + Express App With Heroku
 ====
 
-[Heroku](https://www.heroku.com/)  
+[Heroku](https://www.heroku.com/) is a cloud application platform that makes it easy for developers to deploy their web applications to the public internet. Heroku manages servers and other resources so that developers can focus on writing code rather than maintaining hardware and internet systems.
 
 # References
 
@@ -14,7 +14,9 @@ Additional material on Node.js and Express may be found at:
 
 # Basic Express Application with Heroku
 
-Ensure you are familiar with the command line and git before refering to this material.
+Ensure you are familiar with the command line and git before working through this material.
+
+## Create a new express application
 
 Create a new directory for the project where all the express application code will reside and `cd` into it so that it is now the working directory:
 
@@ -30,6 +32,8 @@ Applications often have *dependency requirements*. A dependency is additional, 3
 A new express application is dependent upon additional code. Install the code into the application with `npm install`:
 
 	$ npm install
+	
+## Confirm the application is working
 	
 A new express application is ready to be run out of the box. The application uses node.js to start a web server on your computer, which you can then access in a web browser.
 
@@ -48,6 +52,8 @@ Additionally, express runs the application on a different *port*, specifically p
 A node express web application will continue to run until it crashes or is terminated from the command line. Terminate the application by typing Control-C (^C) into the terminal window (hold down the *control* key and press the *C* key.):
 
 	$ ^C
+
+## Prepare the application for heroku
 
 The application is now working locally, but we also want to upload it to Heroku's servers. Before doing that, Heroku requires additional information about the application. Specifically, Heroku uses a *Procfile* that tells it how to start the application.
 
@@ -101,6 +107,8 @@ Use Control-C (^C) again to stop foreman or node:
 
 	$ ^C
 
+## Commit the application to a git repository
+
 Heroku uses git to upload applications to its servers. Create an empty git repository for the web application:
 
 	$ git init
@@ -110,6 +118,8 @@ Add and commit the project's files to the git repository:
 
 	$ git add .
 	$ git commit -m "Initial Commit"
+	
+## Create a heroku app and upload your application
 	
 You are now ready to use git to upload, or *push*, your application to Heroku's servers. Use Heroku's command line utility to first create a new Heroku application:
 
@@ -137,6 +147,8 @@ View the application on the public internet:
 	$ heroku open
 	
 You just created a web application and put it on the internet!
+
+## Update your application
 
 Any additional changes you make to the application should be tracked and committed to the git repository. You can then push them to Heroku again. So when you're ready to save and upload your changes, type:
 	
