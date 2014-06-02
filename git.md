@@ -145,7 +145,9 @@ Notice that `git status` now shows that all tracked files have been commited and
 	mbp-phil:myproject okcoders$ git status
 	On branch master
 	nothing to commit, working directory clean
-	
+
+Accomplish both staging with `git add` committing with `git commit` in a single commit by passing the `-a` flag to `git commit`. This way it is not necessary to include `git add` as a separate command.
+
 ## git remote
 
 An advanced command that manages *remote repositories*. A remote repository is a copy of your entire git repository on another machine.
@@ -184,7 +186,7 @@ When you push your changes to a remote repository, specify its *name* and the *b
 
 	git push <remote repository> <branch to push>
 
-More on branches later, but for now use the *main* branch. So to save changes to GitHub, push the *main* branch to *origin*.
+More on branches later, but for now use the *master* branch. So to save changes to GitHub, push the *master* branch to *origin*.
 
 The first time you push to GitHub, include the `-u` flag:
 
@@ -193,3 +195,7 @@ The first time you push to GitHub, include the `-u` flag:
 Later changes may be uploaded to github without that option:
 
 	mbp-phil:myproject okcoders$ git push origin master
+	
+Similarly, push to a Heroku repositoy using the *heroku* name:
+
+	mbp-phil:myproject okcoders$  git push heroku master
