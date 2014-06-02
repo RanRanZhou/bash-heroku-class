@@ -1,13 +1,25 @@
 Introduction to Bash & The Command Line
 ====
 
-What is the command line?
+The *command line* is a text based interface to your computer. Like a *graphical user interface*, the command line provides access to programs and documents, but instead of working with icons and editing documents using windows, buttons and menus with a keyboard and mouse, the command line requires keyboard input only and displays only text.
 
-How does the command line work? What do command line arguments look like?
+A command is just a small program, like a program that you execute from the Start menu or the Finder, but it typically does only one thing and quits when it is finished with that one thing, instead of waiting for additional input from you.
+
+To begin working with the command line, run *Git Bash* from the Start menu in Windows or the *Terminal* program in the main Applications / Utilities folder on a Mac. You are presented with the *terminal prompt* waiting for a command to execute:
+
+	mbp-phil:~ okcoders$
+
+Using the command line is straightforward. At the prompt, enter the command you would like to execute with any options or arguments. The general format looks like:
 
 	command -options arguments
 
-A free, excellent book on the command line is available as a PDF download. I highly recommend it: [The Linux Command Line, by William Shots](http://linuxcommand.org/tlcl.php)
+What makes the command line difficult is that you must learn and *remember* what commands to execute. With a graphical user interface you can easily *recognize* what you need to do. We'll learn a number of basic commands below.
+
+# References
+
+[The Linux Command Line, by William Shots](http://linuxcommand.org/tlcl.php) is an excellent book on the command line available as a free PDF download. I highly recommend it.
+
+# Basic Commands
 
 ## echo
 
@@ -191,6 +203,8 @@ Without passing additional options, `rm` will not delete a diretory. It returns 
 	mbp-phil:~ okcoders$ ls
 	Applications	Documents	Library		Music	Public	Desktop		Downloads	Movies		Pictures
 
+Sometimes it may be necessary to include the `-f` flag to force `rm` to recursively delete a directory. `-f` *forces* the directory contents to be deleted if they wouldn't otherwise be. 
+
 Be careful with `rm`. The command line assumes you know what you are doing. It will not ask if you are sure you want to execute a command, and commands cannot be undone. When you remove a file or folder, it is gone.
 
 ## mv
@@ -241,7 +255,21 @@ Go into *myfolder* and rename *renamed.txt* back to *newfile.txt*:
 
 ## cp
 
-Copy a file or directory.
+Copy a file or directory. `cp` expect a source and target arguments with the following format:
+
+	cp source target
+
+The source is the file you to copy and the target is its new location.
+ 
+Use a fully specified pathname to copy a file and rename it at the same time, provide only a target folder to copy a file to that folder while keeping its name, or provide just a new name to copy the file to the same directory.
+
+For example, copy *myfile.txt* to *copy.txt* in the same directory:
+
+	mbp-phil:myfolder okcoders$ cp myfile.txt copy.txt
+	mbp-phil:myfolder okcoders$ ls
+	copy.txt	myfile.txt
+
+Copy a directory and all its contents with the `-r` flag.
 
 ## cat
 

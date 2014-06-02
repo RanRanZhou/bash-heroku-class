@@ -35,7 +35,7 @@ Create a new git repository. `cd` into the directory you'd like to use first.
 
 Print the status of the repository. Shows what branch you are on (more on branches later) and the status of any files that are being tracked.
 
-When you don't know what to do next, whether you should for example add a file or commit it, `git status` often tells you:
+When you don't know what to do next, for example whether you should add a file or commit it, `git status` often tells you:
 
 	mbp-phil:myproject okcoders$ git status
 	On branch master
