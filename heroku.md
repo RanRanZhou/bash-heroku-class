@@ -60,7 +60,7 @@ The application is now working locally, but we also want to upload it to Heroku'
 Use the `touch` command and `echo` with *redirection* to create the file and add a line of text to it.
 
 	$ touch Procfile
-	$ echo "web: node ./bin/www" >> Profile
+	$ echo "web: node ./bin/www" >> Procfile
 
 By itself, `node ./bin/www` is the command that starts the web application and is the same command that is used by `npm start`.
 
